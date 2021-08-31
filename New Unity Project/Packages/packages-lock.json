@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.noesis.noesisgui": {
-      "version": "file:C:/Users/madri/Desktop/NoesisGUI-Unity-3.1.0-Indie (1)",
+      "version": "file:I:/programas/NoesisGUI-Unity-3.1.0-Indie",
       "depth": 0,
       "source": "local",
       "dependencies": {
