@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: e3265ab4bf004d28a9537516768c1c75
+importerOverride: Noesis.NoesisGUI.Editor::NoesisFontImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 9fd3b7dae822efa409936a010f963465, type: 3}
