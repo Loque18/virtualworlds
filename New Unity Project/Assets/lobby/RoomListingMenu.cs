@@ -3,11 +3,13 @@ using Photon.Realtime;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomListingMenu : MonoBehaviourPunCallbacks
 {
     public RoomItem _roomItem;
     public Transform _content;
+    public RoomManager roommanager;
 
     public GameObject roomItemPrefab;
 
@@ -16,43 +18,49 @@ public class RoomListingMenu : MonoBehaviourPunCallbacks
     private void Start()
     {
         
+        
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        displayRooms(roomList);
+    }
+
+    void displayRooms(List<RoomInfo> roomList)
     {
         currentList.Clear();
         foreach (RoomInfo info in roomList)
         {
 
-            if(info.RemovedFromList)
+            if (info.RemovedFromList)
             {
-                int index = currentList.FindIndex( x => x.room_info.Name == info.Name);
-                if(index != -1)
+                int index = currentList.FindIndex(x => x.room_info.Name == info.Name);
+                if (index != -1)
                 {
                     Destroy(currentList[index].gameObject);
                     currentList.RemoveAt(index);
                 }
-            } 
+            }
             else
             {
                 RoomItem room = (RoomItem)Instantiate(_roomItem, _content);
 
-                if(room != null)
+                
+
+                if (room != null)
                 {
+                    Button btn = room.gameObject.GetComponentInChildren<Button>();
+                    btn.onClick.AddListener(() => {
+                        roommanager.onClick_JoinToRoom(info.Name);
+                    });
+
+
                     room.SetRoomInfo(info);
                     currentList.Add(room);
                 }
-                
+
             }
+        }
 
-           
-
-           /* GameObject roomBox = Instantiate(roomItemPrefab, _content.transform);
-
-            print(roomBox.ToString());
-
-            currentList.Add(listing.gameObject);*/
-            //roomBox.GetComponent<RectTransform>().parent = _content;            
-        }        
     }
 }

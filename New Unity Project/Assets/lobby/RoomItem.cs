@@ -13,6 +13,6 @@ public class RoomItem : MonoBehaviour
     {
         print(roomInfo.Name);
         room_info = roomInfo;
-        info.text = roomInfo.MaxPlayers + ", " + roomInfo.Name;
+        info.text = roomInfo.Name;
     } 
 }

@@ -198,6 +198,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36840077}
   m_CullTransparentMesh: 1
+--- !u!1 &108718992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108718994}
+  - component: {fileID: 108718993}
+  m_Layer: 0
+  m_Name: lobby listing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &108718993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108718992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64aa9d6831ea04458c1280a549870ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomItem: {fileID: 201346623517984919, guid: 43cd99a6e40a2ff41b4d933bee62391b, type: 3}
+  _content: {fileID: 737774138}
+  roommanager: {fileID: 1248565080}
+  roomItemPrefab: {fileID: 6773388000296655495, guid: 43cd99a6e40a2ff41b4d933bee62391b, type: 3}
+--- !u!4 &108718994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108718992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1058619, y: -0.6736784, z: -0.22118568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192872182
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281, y: 0.000008285}
+  m_AnchoredPosition: {x: -273.1, y: -20.1}
   m_SizeDelta: {x: 160, y: 134.0014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412518702
@@ -510,7 +557,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1248565080}
-        m_TargetAssemblyTypeName: Rooms, Assembly-CSharp
+        m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: onClick_CreateRoom
         m_Mode: 1
         m_Arguments:
@@ -1038,7 +1085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281, y: 100.2}
+  m_AnchoredPosition: {x: -273.1, y: 80.100006}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243295752
@@ -1186,8 +1233,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1248565078}
-  - component: {fileID: 1248565079}
   - component: {fileID: 1248565080}
+  - component: {fileID: 1248565079}
   m_Layer: 0
   m_Name: lobby manager
   m_TagString: Untagged
@@ -1207,7 +1254,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1248565079
 MonoBehaviour:
@@ -1218,12 +1265,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248565077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64aa9d6831ea04458c1280a549870ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b08e81e0b1e88e418e90cfc58ce19ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roomItem: {fileID: 201346623517984919, guid: 43cd99a6e40a2ff41b4d933bee62391b, type: 3}
-  _content: {fileID: 737774138}
-  roomItemPrefab: {fileID: 6773388000296655495, guid: 43cd99a6e40a2ff41b4d933bee62391b, type: 3}
 --- !u!114 &1248565080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,10 +1277,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1248565077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437de8297228f7e4cbe5c89303da4490, type: 3}
+  m_Script: {fileID: 11500000, guid: a49087a80afdd1f4b87ed2c77e3d55a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tpro_roomName: {fileID: 1498973117}
+  playerPref: {fileID: 1476496304683070109, guid: af79a67dc2ba5e74d9984e5526784d7e, type: 3}
+  tpro_createRoom: {fileID: 1498973117}
 --- !u!1 &1417230693
 GameObject:
   m_ObjectHideFlags: 0
